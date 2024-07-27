@@ -29,10 +29,13 @@ func _process(delta):
 	pass
 
 
-func _on_sprite_2d_selected():
-	print("sprite selected")
-	selected.emit(self)
-
 func unselect():
 	print("Unselecting ", self)
-	self.get_child(0).texture = load("res://art/cell_unselected.png")
+	$Sprite2D.texture = load("res://art/cell_unselected.png")
+
+
+func _on_input_event(viewport, event, shape_idx):
+	if event.is_action_pressed("mouse_left_click"):
+		print("Clicked")
+		$Sprite2D.texture = load("res://art/cell_selected.png")
+		selected.emit(self)
