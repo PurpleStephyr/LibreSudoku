@@ -1,41 +1,44 @@
-[gd_scene load_steps=2 format=3 uid="uid://bpv616wf6e0mq"]
+[gd_scene load_steps=3 format=3 uid="uid://bpv616wf6e0mq"]
 
-[ext_resource type="PackedScene" path="res://Box.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://c4f08a0ykbr0c" path="res://Box.tscn" id="1"]
+[ext_resource type="Script" path="res://Grid.gd" id="1_yypwv"]
 
 [node name="Grid" type="TileMap"]
 format = 2
+script = ExtResource("1_yypwv")
 
 [node name="Box" parent="." instance=ExtResource("1")]
-format = 2
 
 [node name="Box2" parent="." instance=ExtResource("1")]
 position = Vector2(192, 0)
-format = 2
 
 [node name="Box3" parent="." instance=ExtResource("1")]
 position = Vector2(384, 0)
-format = 2
 
 [node name="Box4" parent="." instance=ExtResource("1")]
 position = Vector2(0, 192)
-format = 2
 
 [node name="Box5" parent="." instance=ExtResource("1")]
 position = Vector2(192, 192)
-format = 2
 
 [node name="Box6" parent="." instance=ExtResource("1")]
 position = Vector2(384, 192)
-format = 2
 
 [node name="Box7" parent="." instance=ExtResource("1")]
 position = Vector2(0, 384)
-format = 2
 
 [node name="Box8" parent="." instance=ExtResource("1")]
 position = Vector2(192, 384)
-format = 2
 
 [node name="Box9" parent="." instance=ExtResource("1")]
 position = Vector2(384, 384)
-format = 2
+
+[connection signal="selected" from="Box" to="." method="_on_box_selected"]
+[connection signal="selected" from="Box2" to="." method="_on_box_selected"]
+[connection signal="selected" from="Box3" to="." method="_on_box_selected"]
+[connection signal="selected" from="Box4" to="." method="_on_box_selected"]
+[connection signal="selected" from="Box5" to="." method="_on_box_selected"]
+[connection signal="selected" from="Box6" to="." method="_on_box_selected"]
+[connection signal="selected" from="Box7" to="." method="_on_box_selected"]
+[connection signal="selected" from="Box8" to="." method="_on_box_selected"]
+[connection signal="selected" from="Box9" to="." method="_on_box_selected"]
