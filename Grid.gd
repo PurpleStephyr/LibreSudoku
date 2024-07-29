@@ -35,5 +35,3 @@ func _on_box_selected(box):
 		current_selected.unselect()
 	if current_selected != box:
 		current_selected = box
-	else:
-		current_selected = null
