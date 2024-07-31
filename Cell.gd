@@ -17,6 +17,7 @@
 
 extends Area2D
 
+signal clicked
 signal selected
 
 # Called when the node enters the scene tree for the first time.
@@ -34,8 +35,12 @@ func unselect():
 	$Sprite2D.texture = load("res://art/cell_unselected.png")
 
 
+func select():
+	print("Selecting ", self)
+	$Sprite2D.texture = load("res://art/cell_selected.png")
+
+
 func _on_input_event(viewport, event, shape_idx):
 	if event.is_action_pressed("mouse_left_click"):
 		print("Clicked")
-		$Sprite2D.texture = load("res://art/cell_selected.png")
-		selected.emit(self)
+		clicked.emit(self)

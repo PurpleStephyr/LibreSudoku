@@ -29,9 +29,9 @@ func _process(delta):
 	pass
 
 
-func _on_box_selected(box):
+func _on_box_clicked(box):
 	print("box ", box, " selected")
-	if current_selected != null and current_selected != box:
+	if current_selected != null:
 		current_selected.unselect()
-	if current_selected != box:
-		current_selected = box
+	current_selected = box
+

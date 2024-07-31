@@ -8,7 +8,7 @@
 format = 2
 script = ExtResource("1_kqnls")
 
-[node name="Cell" parent="." instance=ExtResource("1")]
+[node name="Cell1" parent="." instance=ExtResource("1")]
 
 [node name="Cell2" parent="." instance=ExtResource("1")]
 position = Vector2(64, 0)
@@ -38,12 +38,12 @@ position = Vector2(128, 128)
 texture = ExtResource("2")
 centered = false
 
-[connection signal="selected" from="Cell" to="." method="_on_cell_selected"]
-[connection signal="selected" from="Cell2" to="." method="_on_cell_selected"]
-[connection signal="selected" from="Cell3" to="." method="_on_cell_selected"]
-[connection signal="selected" from="Cell4" to="." method="_on_cell_selected"]
-[connection signal="selected" from="Cell5" to="." method="_on_cell_selected"]
-[connection signal="selected" from="Cell6" to="." method="_on_cell_selected"]
-[connection signal="selected" from="Cell7" to="." method="_on_cell_selected"]
-[connection signal="selected" from="Cell8" to="." method="_on_cell_selected"]
-[connection signal="selected" from="Cell9" to="." method="_on_cell_selected"]
+[connection signal="clicked" from="Cell1" to="." method="_on_cell_clicked"]
+[connection signal="clicked" from="Cell2" to="." method="_on_cell_clicked"]
+[connection signal="clicked" from="Cell3" to="." method="_on_cell_clicked"]
+[connection signal="clicked" from="Cell4" to="." method="_on_cell_clicked"]
+[connection signal="clicked" from="Cell5" to="." method="_on_cell_clicked"]
+[connection signal="clicked" from="Cell6" to="." method="_on_cell_clicked"]
+[connection signal="clicked" from="Cell7" to="." method="_on_cell_clicked"]
+[connection signal="clicked" from="Cell8" to="." method="_on_cell_clicked"]
+[connection signal="clicked" from="Cell9" to="." method="_on_cell_clicked"]

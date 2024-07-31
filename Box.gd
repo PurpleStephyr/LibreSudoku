@@ -17,7 +17,7 @@
 
 extends TileMap
 
-signal selected
+signal clicked
 
 var current_selected
 
@@ -31,16 +31,17 @@ func _process(delta):
 	pass
 
 
-func _on_cell_selected(cell):
-	print("cell ", cell, " selected")
-	unselect()
+func _on_cell_clicked(cell):
+	print("cell ", cell, " clicked")
+	clicked.emit(self)
 	if current_selected != cell:
+		cell.select()
 		current_selected = cell
-	selected.emit(self)
+	else:
+		current_selected = null
 
 
 func unselect():
 	print("unselecting ", self)
 	if current_selected != null:
 		current_selected.unselect()
-		current_selected = null
