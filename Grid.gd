@@ -1,5 +1,5 @@
 #
-# Copyright 2024 Steph Kraemer <purple.stephyr@proton.me>
+# Copyright 2024 Steph Kraemer <purple.stephyr@fmgirl.com>
 #
 # This file is part of LibreSudoku.
 #

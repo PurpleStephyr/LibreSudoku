@@ -1,5 +1,5 @@
 #
-# Copyright 2024 Steph Kraemer <purple.stephyr@proton.me>
+# Copyright 2024 Steph Kraemer <purple.stephyr@fmgirl.com>
 #
 # This file is part of LibreSudoku.
 #
@@ -40,6 +40,10 @@ func _on_cell_clicked(cell):
 	else:
 		current_selected = null
 
+
+func _on_cell_value_changed(cell):
+	print("cell ", cell, " value changed")
+	get_tree().call_group("Cells", "check_conflict", cell)
 
 func unselect():
 	print("unselecting ", self)

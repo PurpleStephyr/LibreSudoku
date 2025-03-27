@@ -1,5 +1,5 @@
 #
-# Copyright 2024 Steph Kraemer <purple.stephyr@proton.me>
+# Copyright 2024 Steph Kraemer <purple.stephyr@fmgirl.com>
 #
 # This file is part of LibreSudoku.
 #
@@ -18,8 +18,10 @@
 extends Area2D
 
 signal clicked
+signal value_changed
 
 var selected = false
+var value = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -30,26 +32,39 @@ func _ready():
 func _process(delta):
 	pass
 
+
+func set_value(val):
+	value = val
+	$Label.text = str(val)
+	value_changed.emit(self)
+
+
+func check_conflict(other):
+	if other == self:
+		return
+	if other.value == self.value:
+		print("Conflict ", self, " and ", other)
+
 func _input(event):
 	if selected:
 		if event.is_action_pressed("type_1"):
-			$Label.text = "1"
+			set_value(1)
 		elif event.is_action_pressed("type_2"):
-			$Label.text = "2"
+			set_value(2)
 		elif event.is_action_pressed("type_3"):
-			$Label.text = "3"
+			set_value(3)
 		elif event.is_action_pressed("type_4"):
-			$Label.text = "4"
+			set_value(4)
 		elif event.is_action_pressed("type_5"):
-			$Label.text = "5"
+			set_value(5)
 		elif event.is_action_pressed("type_6"):
-			$Label.text = "6"
+			set_value(6)
 		elif event.is_action_pressed("type_7"):
-			$Label.text = "7"
+			set_value(7)
 		elif event.is_action_pressed("type_8"):
-			$Label.text = "8"
+			set_value(8)
 		elif event.is_action_pressed("type_9"):
-			$Label.text = "9"
+			set_value(9)
 
 
 func unselect():
